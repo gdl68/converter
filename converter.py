@@ -245,6 +245,6 @@ def main_func():
         pass
 
 
-print('Добро пожаловать в конвертер единиц V1.0(alpha)')
+print('Добро пожаловать в конвертер единиц V1.2(alpha)')
 main_func()
 exit_conv()
