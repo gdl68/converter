@@ -13,10 +13,7 @@ def conv_strength():
         conv_strength()
         pass
     choice_3 = input('В какую единицу силы мы будем конвертировать? мН/Н/кН/МН\n')
-    if choice_1 == 'мН' and choice_3 == 'мН':
-        conv_strength = choice_2
-        return conv_strength
-    elif choice_1 == 'мН' and choice_3 == 'Н':
+    if choice_1 == 'мН' and choice_3 == 'Н':
         conv_strength = choice_2 / 1000
         return conv_strength
     elif choice_1 == 'мН' and choice_3 == 'кН':
@@ -27,9 +24,6 @@ def conv_strength():
         return conv_strength
     elif choice_1 == 'Н' and choice_3 == 'мН':
         conv_strength = choice_2 * 1000
-        return conv_strength
-    elif choice_1 == 'Н' and choice_3 == 'Н':
-        conv_strength = choice_2
         return conv_strength
     elif choice_1 == 'Н' and choice_3 == 'кН':
         conv_strength = choice_2 * 0.001
@@ -43,9 +37,6 @@ def conv_strength():
     elif choice_1 == 'кН' and choice_3 == 'Н':
         conv_strength = choice_2 * 1000
         return conv_strength
-    elif choice_1 == 'кН' and choice_3 == 'кН':
-        conv_strength = choice_2
-        return conv_strength
     elif choice_1 == 'кН' and choice_3 == 'МН':
         conv_strength = choice_2 * 0.001
         return conv_strength
@@ -58,7 +49,7 @@ def conv_strength():
     elif choice_1 == 'МН' and choice_3 == 'кН':
         conv_strength = choice_2 * 1000
         return conv_strength
-    elif choice_1 == 'МН' and choice_3 == 'МН':
+    elif choice_1 == choice_3:
         conv_strength = choice_2
         return conv_strength
     else:
@@ -126,17 +117,14 @@ def conv_volume():
         main_func()  # Странная вещь
         pass
     choice_3 = input('В какую единицу объема мы будем конвертировать? мл/л(мм3/см3/м3/дм3/км3)\n')
-    if choice_1 == 'мл' and choice_3 == 'мл':
-        conv_volume = choice_2
-        return conv_volume
-    elif choice_1 == 'мл' and choice_3 == 'л':
+    if choice_1 == 'мл' and choice_3 == 'л':
         conv_volume = choice_2 / 1000
-        return conv_volume
-    elif choice_1 == 'л' and choice_3 == 'л':
-        conv_volume = choice_2
         return conv_volume
     elif choice_1 == 'л' and choice_3 == 'мл':
         conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == choice_3:
+        conv_volume = choice_2
         return conv_volume
     else:
         print('Одна из мер объема неверна.')
@@ -192,8 +180,9 @@ def exit_conv_1():
 
 def exit_conv():
     # Выход из конвертатора
-    conv_exit = input('Хочешь выйти из конвертатора V1.0(alpha)? да/нет\n')
+    conv_exit = input('Хочешь выйти из конвертатора V1.2(alpha)? да/нет\n')
     if conv_exit == 'да':
+        print('До скорых встреч!')
         input('Нажмите Enter')
         sys.exit()
         pass
