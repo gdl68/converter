@@ -6,11 +6,11 @@ def conv_strength():
     # http://www.convert-me.com/ru/convert/force/newton.html?u=newton&v=1
     choice_1 = input('Из какой единицы силы мы будем конвертировать? мН/Н/кН/МН\n')
     try:
-        choice_2 = int(input('Сколько?(число)\n'))
+        choice_2 = int(input('Сколько?(целое число)\n'))
         pass
     except ValueError:
         print('Это не число, попробуй еще раз.')
-        conv_strength()
+        main_func()
         pass
     choice_3 = input('В какую единицу силы мы будем конвертировать? мН/Н/кН/МН\n')
     if choice_1 == 'мН' and choice_3 == 'Н':
@@ -54,7 +54,7 @@ def conv_strength():
         return conv_strength
     else:
         print('Одна из мер силы неверна.')
-        conv_strength()
+        main_func()
         pass
 
 
@@ -110,7 +110,7 @@ def conv_volume():
     # Конвертация объема
     choice_1 = input('Из какой единицы объема мы будем конвертировать? мл/л(мм3/см3/м3/дм3/км3)\n')
     try:
-        choice_2 = int(input('Сколько?(число)\n'))
+        choice_2 = int(input('Сколько?(целое число)\n'))
         pass
     except ValueError:
         print('Это не число.')
@@ -148,22 +148,6 @@ def conv_metres2():
     return conv_metres
 
 
-def conv_metres3():
-    # Конвертация длины3
-    choice_1 = input('Из какой единицы длины мы будем конвертировать? мм3/см3/м3/дм3/км3\n')
-    try:
-        choice_2 = int(input('Сколько?(число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        conv_metres()
-        pass
-    choice_3 = input('В какую единицу длины мы будем конвертировать? мм3/см3/м3/дм3/км3\n')
-    # Дальше идут описания каждого случая
-    # Не забудь про неправильный выбор
-    return conv_metres
-
-
 def exit_conv_1():
     # "Хочеь продолжить конвертировать?" да - main_func() нет - exit_conv()
     conv_exit = input('Хочешь продолжить конвертировать? да/нет\n')
@@ -196,17 +180,13 @@ def exit_conv():
 
 def main_func():
     # Выбор типа конвертации
-    conv_choice = input('Что ты хочешь конвертировать? длина/длина2/длина3/объем/давление/масса/сила/выход\n')
+    conv_choice = input('Что ты хочешь конвертировать? длина/площадь/объем/давление/масса/сила/выход\n')
     if conv_choice == 'длина':
         print(conv_metres())
         exit_conv_1()
         pass
-    if conv_choice == 'длина2':
+    elif conv_choice == 'площадь':
         print(conv_metres2())
-        exit_conv_1()
-        pass
-    if conv_choice == 'длина3':
-        print(conv_metres3())
         exit_conv_1()
         pass
     elif conv_choice == 'выход':
