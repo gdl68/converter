@@ -184,7 +184,7 @@ def conv_volume():
         conv_volume = choice_2 * 0.000000001
         return conv_volume
     elif choice_1 == 'мм3' and choice_3 == 'км3':
-        conv_volume = choice_2 / 1000000000000000000
+        conv_volume = choice_2 * 0.0000000000000000001
         return conv_volume
     elif choice_1 == 'см3' and choice_3 == 'мл':
         conv_volume = choice_2 * 1
