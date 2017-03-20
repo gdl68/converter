@@ -1,5 +1,20 @@
 import sys
 
+import math
+
+
+def conv_speed():
+    choice_1 = input('Из какой единицы силы мы будем конвертировать? мН/Н/кН/МН\n')
+    try:
+        choice_2 = int(input('Сколько?(целое число)\n'))
+        pass
+    except ValueError:
+        print('Это не число, попробуй еще раз.')
+        main_func()
+        pass
+    choice_3 = input('В какую единицу силы мы будем конвертировать? мН/Н/кН/МН\n')
+    return conv_speed
+
 
 def conv_strength():
     # Коневертация силы
@@ -108,7 +123,7 @@ def conv_metres():
 
 def conv_volume():
     # Конвертация объема
-    choice_1 = input('Из какой единицы объема мы будем конвертировать? мл/л(мм3/см3/м3/дм3/км3)\n')
+    choice_1 = input('Из какой единицы объема мы будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
     try:
         choice_2 = int(input('Сколько?(целое число)\n'))
         pass
@@ -116,13 +131,134 @@ def conv_volume():
         print('Это не число.')
         main_func()  # Странная вещь
         pass
-    choice_3 = input('В какую единицу объема мы будем конвертировать? мл/л(мм3/см3/м3/дм3/км3)\n')
+    choice_3 = input('В какую единицу объема мы будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
     if choice_1 == 'мл' and choice_3 == 'л':
-        conv_volume = choice_2 / 1000
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'мл' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'мл' and choice_3 == 'см3':
+        conv_volume = choice_2 * 1
+        return conv_volume
+    elif choice_1 == 'мл' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'мл' and choice_3 == 'м3':
+        conv_volume = choice_2 * 0.000001
+        return conv_volume
+    elif choice_1 == 'мл' and choice_3 == 'км3':
+        conv_volume = choice_2 * 0.000000000000001
         return conv_volume
     elif choice_1 == 'л' and choice_3 == 'мл':
         conv_volume = choice_2 * 1000
         return conv_volume
+    elif choice_1 == 'л' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000000
+        return conv_volume
+    elif choice_1 == 'л' and choice_3 == 'см3':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'л' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 1
+        return conv_volume
+    elif choice_1 == 'л' and choice_3 == 'м3':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'л' and choice_3 == 'км3':
+        conv_volume = choice_2 * 0.000000000001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'мл':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'л':
+        conv_volume = choice_2 * 0.000001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'см3':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 0.000001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'м3':
+        conv_volume = choice_2 * 0.000000001
+        return conv_volume
+    elif choice_1 == 'мм3' and choice_3 == 'км3':
+        conv_volume = choice_2 / 1000000000000000000
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'мл':
+        conv_volume = choice_2 * 1
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'л':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'м3':
+        conv_volume = choice_2 * 0.000001
+        return conv_volume
+    elif choice_1 == 'см3' and choice_3 == 'км3':
+        conv_volume = choice_2 * 0.000000000000001
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'мл':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'л':
+        conv_volume = choice_2 * 1
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000000
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'см3':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'м3':
+        conv_volume = choice_2 * 0.001
+        return conv_volume
+    elif choice_1 == 'дм3' and choice_3 == 'км3':
+        conv_volume = choice_2 * 0.000000000001
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'мл':
+        conv_volume = choice_2 * 1000000
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'л':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000000000
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'см3':
+        conv_volume = choice_2 * 1000000
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 1000
+        return conv_volume
+    elif choice_1 == 'м3' and choice_3 == 'км3':
+        conv_volume = choice_2 * 0.000000001
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'мл':
+        conv_volume = choice_2 * 1000000000000000
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'л':
+        conv_volume = choice_2 * 1000000000000
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'мм3':
+        conv_volume = choice_2 * 1000000000000000000
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'см3':
+        conv_volume = choice_2 * 1000000000000000
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'дм3':
+        conv_volume = choice_2 * 1000000000000
+        return conv_volume
+    elif choice_1 == 'км3' and choice_3 == 'м3':
+        conv_volume = choice_2 * 1000000000
+        return conv_volume
+    # Для одинаковых
     elif choice_1 == choice_3:
         conv_volume = choice_2
         return conv_volume
@@ -180,7 +316,8 @@ def exit_conv():
 
 def main_func():
     # Выбор типа конвертации
-    conv_choice = input('Что ты хочешь конвертировать? длина/площадь/объем/давление/масса/сила/выход\n')
+    conv_choice = input('Что ты хочешь конвертировать? длина/площадь/объем/давление/масса'
+                        '/сила/выход/скорость\n')
     if conv_choice == 'длина':
         print(conv_metres())
         exit_conv_1()
@@ -206,6 +343,10 @@ def main_func():
         pass
     elif conv_choice == 'сила':
         print(conv_strength())
+        exit_conv_1()
+        pass
+    elif conv_choice == 'скорость':
+        print(conv_speed())
         exit_conv_1()
         pass
     else:
