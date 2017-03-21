@@ -3,31 +3,83 @@ import sys
 import math
 
 
-def conv_speed():
-    choice_1 = input('Из какой единицы силы мы будем конвертировать? мН/Н/кН/МН\n')
+def number_check(a):
     try:
-        choice_2 = int(input('Сколько?(целое число)\n'))
-        pass
+        float(a)
+        return True
     except ValueError:
-        print('Это не число, попробуй еще раз.')
-        main_func()
-        pass
-    choice_3 = input('В какую единицу силы мы будем конвертировать? мН/Н/кН/МН\n')
-    return conv_speed
+        return False
+
+
+def conv_speed():
+    # while True:
+    #     choice_1 = input('\nИз какой единицы измерения '
+    #                      'скорости мы\n будем конвертировать? мН/Н/кН/МН\n')
+    #     if choice_1 == 'мН' or choice_1 == 'Н' or choice_1 == 'кН' or choice_1 == 'МН':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
+    # while True:
+    #     choice_2 = str(input('\nСколько?\n'))
+    #     number = number_check(choice_2)
+    #     if number == False:
+    #         print('\n===================================\n'
+    #               '            Это не число!\n'
+    #               '===================================\n')
+    #         continue
+    #     else:
+    #         choice_2 = float(choice_2)
+    #         break
+    # while True:
+    #     choice_3 = input('\nВ какую единицы измерения скорости мы\n '
+    #                      'будем конвертировать? мН/Н/кН/МН\n')
+    #     if choice_3 == 'мН' or choice_3 == 'Н' or choice_3 == 'кН' or choice_3 == 'МН':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
+    return conv_speed, choice_3
 
 
 def conv_strength():
     # Коневертация силы
     # http://www.convert-me.com/ru/convert/force/newton.html?u=newton&v=1
-    choice_1 = input('Из какой единицы силы мы будем конвертировать? мН/Н/кН/МН\n')
-    try:
-        choice_2 = int(input('Сколько?(целое число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        main_func()
-        pass
-    choice_3 = input('В какую единицу силы мы будем конвертировать? мН/Н/кН/МН\n')
+    while True:
+        choice_1 = input('Из какой единицы измерения '
+                         'силы мы\n будем конвертировать? мН/Н/кН/МН\n')
+        if choice_1 == 'мН' or choice_1 == 'Н' or choice_1 == 'кН' or choice_1 == 'МН':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?(целое число)\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = int(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения силы мы\n '
+                         'будем конвертировать? мН/Н/кН/МН\n')
+        if choice_3 == 'мН' or choice_3 == 'Н' or choice_3 == 'кН' or choice_3 == 'МН':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
     if choice_1 == 'мН' and choice_3 == 'Н':
         conv_strength = choice_2 / 1000
         return conv_strength
@@ -68,70 +120,161 @@ def conv_strength():
         conv_strength = choice_2
         return conv_strength
     else:
-        print('Одна из мер силы неверна.')
+        print('\nОдна из мер силы неверна.')
         main_func()
         pass
 
 
 def conv_mass():
     # Конвертация массы
-    choice_1 = input('Из какой единицы массы мы будем конвертировать? мг/г/кг/ц/т\n')
-    try:
-        choice_2 = int(input('Сколько?(число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        conv_mass()
-        pass
-    choice_3 = input('В какую единицу массы мы будем конвертировать? мг/г/кг/ц/т\n')
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'массы мы\n будем конвертировать? мг/г/кг/ц/т\n')
+        if choice_1 == 'мг' or choice_1 == 'г' or choice_1 == 'кг' or choice_1 == 'ц' or choice_1 == 'т':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения массы мы\n '
+                         'будем конвертировать? мг/г/кг/ц/т/\n')
+        if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass
+    return conv_mass, choice_3
 
 
 def conv_pressure():
     # Конвертация давления
-    choice_1 = input('Из какой единицы давления мы будем конвертировать? Па\кПа\гПа\МПа\мм.рт.ст.\n')
-    try:
-        choice_2 = int(input('Сколько?(число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        conv_pressure()
-        pass
-    choice_3 = input('В какую единицу давления мы будем конвертировать? Па\кПа\гПа\МПа\мм.рт.ст.\n')
+    # while True:
+    #     choice_1 = input('\nИз какой единицы измерения '
+    #                      'давления мы\n будем конвертировать? мН/Н/кН/МН\n')
+    #     if choice_1 == 'мН' or choice_1 == 'Н' or choice_1 == 'кН' or choice_1 == 'МН':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
+    # while True:
+    #     number = number_check(choice_2)
+    #     if number == False:
+    #         print('\n===================================\n'
+    #               '            Это не число!\n'
+    #               '===================================\n')
+    #     choice_2 = str(input('\nСколько?\n'))
+    #         continue
+    #     else:
+    #         choice_2 = float(choice_2)
+    #         break
+    # while True:
+    #     choice_3 = input('\nВ какую единицы измерения давления мы\n '
+    #                      'будем конвертировать? мН/Н/кН/МН\n')
+    #     if choice_3 == 'мН' or choice_3 == 'Н' or choice_3 == 'кН' or choice_3 == 'МН':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass
+    return conv_mass, choice_3
 
 
 def conv_metres():
     # Конвертация длины1
-    choice_1 = input('Из какой единицы длины мы будем конвертировать? мм/см/м/дм/км\n')
-    try:
-        choice_2 = int(input('Сколько?(число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        conv_metres()
-        pass
-    choice_3 = input('В какую единицу длины мы будем конвертировать? мм/см/м/дм/км\n')
+    # while True:
+    #     choice_1 = input('\nИз какой единицы измерения '
+    #                      'массы мы\n будем конвертировать? мг/г/кг/ц/т\n')
+    #     if choice_1 == 'мг' or choice_1 == 'г' or choice_1 == 'кг' or choice_1 == 'ц' or choice_1 == 'т':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
+    # while True:
+    #     choice_2 = str(input('\nСколько?\n'))
+    #     number = number_check(choice_2)
+    #     if number == False:
+    #         print('\n===================================\n'
+    #               '            Это не число!\n'
+    #               '===================================\n')
+    #         continue
+    #     else:
+    #         choice_2 = float(choice_2)
+    #         break
+    # while True:
+    #     choice_3 = input('\nВ какую единицы измерения массы мы\n '
+    #                      'будем конвертировать? мг/г/кг/ц/т/\n')
+    #     if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_metres
+    return conv_metres, choice_3
 
 
+# мл/л/мм3/см3/м3/дм3/км3
 def conv_volume():
     # Конвертация объема
-    choice_1 = input('Из какой единицы объема мы будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
-    try:
-        choice_2 = int(input('Сколько?(целое число)\n'))
-        pass
-    except ValueError:
-        print('Это не число.')
-        main_func()  # Странная вещь
-        pass
-    choice_3 = input('В какую единицу объема мы будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'массы мы\n будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
+        if choice_1 == 'мл' or choice_1 == 'л' or choice_1 == 'мм3' or choice_1 == 'см3' or choice_1 == 'м3' or \
+                        choice_1 == 'дм3' or choice_1 == 'км3':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения массы мы\n '
+                         'будем конвертировать? мл/л/мм3/см3/м3/дм3/км3\n')
+        if choice_3 == 'мл' or choice_3 == 'л' or choice_3 == 'мм3' or choice_3 == 'см3' or choice_3 == 'м3' or \
+                        choice_3 == 'дм3' or choice_3 == 'км3':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
     if choice_1 == 'мл' and choice_3 == 'л':
         conv_volume = choice_2 * 0.001
         return conv_volume
@@ -261,32 +404,60 @@ def conv_volume():
     # Для одинаковых
     elif choice_1 == choice_3:
         conv_volume = choice_2
-        return conv_volume
+        return conv_volume, choice_3
     else:
-        print('Одна из мер объема неверна.')
-        main_func()
+        print('\n'
+              '===================================\n'
+              'Ошибка, пожалуйста сообщите автору\n'
+              'Телефон: +79611619556\n'
+              'VK: vk.com\gdl68\n'
+              'Почта: tampio.ilya.gdl68@gmail.com\n'
+              '===================================\n')
+        exit_conv()
         pass
 
 
 def conv_metres2():
     # Конвертация длины2
-    choice_1 = input('Из какой единицы длины мы будем конвертировать? мм2/см2/м2/дм2/км2\n')
-    try:
-        choice_2 = int(input('Сколько?(число)\n'))
-        pass
-    except ValueError:
-        print('Это не число, попробуй еще раз.')
-        conv_metres()
-        pass
-    choice_3 = input('В какую единицу длины мы будем конвертировать? мм2/см2/м2/дм2/км2\n')
+    # while True:
+    #     choice_1 = input('\nИз какой единицы измерения '
+    #                      'массы мы\n будем конвертировать? мг/г/кг/ц/т\n')
+    #     if choice_1 == 'мг' or choice_1 == 'г' or choice_1 == 'кг' or choice_1 == 'ц' or choice_1 == 'т':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
+    # while True:
+    #     choice_2 = str(input('\nСколько?(целое число)\n'))
+    #     number = number_check(choice_2)
+    #     if number == False:
+    #         print('\n===================================\n'
+    #               '            Это не число!\n'
+    #               '===================================\n')
+    #         continue
+    #     else:
+    #         choice_2 = int(choice_2)
+    #         break
+    # while True:
+    #     choice_3 = input('\nВ какую единицы измерения массы мы\n '
+    #                      'будем конвертировать? мг/г/кг/ц/т/\n')
+    #     if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
+    #         break
+    #     else:
+    #         print('\n===================================\n'
+    #               'Введена неверная еденица измерения!\n'
+    #               '===================================\n')
+    #         continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_metres
+    return conv_metres, choice_3
 
 
 def exit_conv_1():
     # "Хочеь продолжить конвертировать?" да - main_func() нет - exit_conv()
-    conv_exit = input('Хочешь продолжить конвертировать? да/нет\n')
+    conv_exit = input('\nХочешь продолжить конвертировать? да/нет\n')
     if conv_exit == 'да':
         main_func()
         pass
@@ -300,9 +471,9 @@ def exit_conv_1():
 
 def exit_conv():
     # Выход из конвертатора
-    conv_exit = input('Хочешь выйти из конвертатора V1.2(alpha)? да/нет\n')
+    conv_exit = input('\nХочешь выйти из конвертатора V1.3(alpha)? да/нет\n')
     if conv_exit == 'да':
-        print('До скорых встреч!')
+        print('\nДо скорых встреч!')
         input('Нажмите Enter')
         sys.exit()
         pass
@@ -310,13 +481,17 @@ def exit_conv():
         main_func()
         pass
     else:
+        print('\n===================================\n'
+              'Неправильный выбор (', conv_exit, ')'
+              '\n===================================\n')
         exit_conv()
         pass
 
 
 def main_func():
     # Выбор типа конвертации
-    conv_choice = input('Что ты хочешь конвертировать? длина/площадь/объем/давление/масса'
+    conv_choice = input('\nЧто ты хочешь конвертировать?\n'
+                        ' длина/площадь/объем/давление/масса'
                         '/сила/выход/скорость\n')
     if conv_choice == 'длина':
         print(conv_metres())
@@ -350,11 +525,15 @@ def main_func():
         exit_conv_1()
         pass
     else:
-        print('Невозможная величина.')
+        print('\n===================================\n'
+              ' Неверная величина!(', conv_choice, ')\n'
+              '===================================\n')
         main_func()
         pass
 
 
-print('Добро пожаловать в конвертер единиц V1.2(alpha)')
+print('\n===============================================\n'
+      'Добро пожаловать в конвертер единиц V1.3(alpha)\n'
+      '===============================================\n')
 main_func()
 exit_conv()
