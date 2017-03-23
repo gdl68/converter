@@ -1,7 +1,5 @@
 import sys
 
-import math
-
 
 def number_check(a):
     try:
@@ -43,7 +41,7 @@ def conv_speed():
     #               'Введена неверная еденица измерения!\n'
     #               '===================================\n')
     #         continue
-    return conv_speed, choice_3
+    return conv_speed
 
 
 def conv_strength():
@@ -120,7 +118,7 @@ def conv_strength():
         conv_strength = choice_2
         return conv_strength
     else:
-        print('\nОдна из мер силы неверна.')
+        print('\nОдна из мер длины неверна.')
         main_func()
         pass
 
@@ -160,7 +158,7 @@ def conv_mass():
             continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass, choice_3
+    return conv_mass
 
 
 def conv_pressure():
@@ -198,45 +196,111 @@ def conv_pressure():
     #         continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass, choice_3
+    return conv_mass
 
 
 def conv_metres():
     # Конвертация длины1
-    # while True:
-    #     choice_1 = input('\nИз какой единицы измерения '
-    #                      'массы мы\n будем конвертировать? мг/г/кг/ц/т\n')
-    #     if choice_1 == 'мг' or choice_1 == 'г' or choice_1 == 'кг' or choice_1 == 'ц' or choice_1 == 'т':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
-    # while True:
-    #     choice_2 = str(input('\nСколько?\n'))
-    #     number = number_check(choice_2)
-    #     if number == False:
-    #         print('\n===================================\n'
-    #               '            Это не число!\n'
-    #               '===================================\n')
-    #         continue
-    #     else:
-    #         choice_2 = float(choice_2)
-    #         break
-    # while True:
-    #     choice_3 = input('\nВ какую единицы измерения массы мы\n '
-    #                      'будем конвертировать? мг/г/кг/ц/т/\n')
-    #     if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'длины мы\n будем конвертировать? мм\см\дм\м\км\n')
+        if choice_1 == 'мм' or choice_1 == 'см' or choice_1 == 'дм' or choice_1 == 'км' or choice_1 == 'м':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения '
+                         'длины мы\n будем конвертировать? мм\см\дм\м\км\n')
+        if choice_3 == 'мм' or choice_3 == 'см' or choice_3 == 'дм' or choice_3 == 'км' or choice_3 =='м':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    if choice_1 == 'мм' and choice_3 == 'см':
+        conv_metres = choice_2 / 10
+        return conv_metres
+    elif choice_1 == 'мм' and choice_3 == 'дм':
+        conv_metres = choice_2 / 100
+        return conv_metres
+    elif choice_1 == 'мм' and choice_3 == 'м':
+        conv_metres = choice_2 / 1000
+        return conv_metres
+    elif choice_1 == 'мм' and choice_3 == 'км':
+        conv_metres = choice_2 / 1000000
+        return conv_metres
+    elif choice_1 == 'см' and choice_3 == 'мм':
+        conv_metres = choice_2 * 10
+        return conv_metres
+    elif choice_1 == 'см' and choice_3 == 'дм':
+        conv_metres = choice_2 / 10
+        return conv_metres
+    elif choice_1 == 'см' and choice_3 == 'м':
+        conv_metres = choice_2 / 100
+        return conv_metres
+    elif choice_1 == 'см' and choice_3 == 'км':
+        conv_metres = choice_2 / 100000
+        return conv_metres
+    elif choice_1 == 'дм' and choice_3 == 'мм':
+        conv_metres = choice_2 * 100
+        return conv_metres
+    elif choice_1 == 'дм' and choice_3 == 'см':
+        conv_metres = choice_2 * 10
+        return conv_metres
+    elif choice_1 == 'дм' and choice_3 == 'м':
+        conv_metres = choice_2 / 10
+        return conv_metres
+    elif choice_1 == 'дм' and choice_3 == 'км':
+        conv_metres = choice_2 / 10000
+        return conv_metres
+    elif choice_1 == 'м' and choice_3 == 'мм':
+        conv_metres = choice_2 * 1000
+        return conv_metres
+    elif choice_1 == 'м' and choice_3 == 'см':
+        conv_metres = choice_2 * 100
+        return conv_metres
+    elif choice_1 == 'м' and choice_3 == 'дм':
+        conv_metres = choice_2 * 10
+        return conv_metres
+    elif choice_1 == 'м' and choice_3 == 'км':
+        conv_metres = choice_2 / 1000
+        return conv_metres
+    elif choice_1 == 'км' and choice_3 == 'мм':
+        conv_metres = choice_2 * 1000000
+        return conv_metres
+    elif choice_1 == 'км' and choice_3 == 'см':
+        conv_metres = choice_2 * 100000
+        return conv_metres
+    elif choice_1 == 'км' and choice_3 == 'дм':
+        conv_metres = choice_2 * 10000
+        return conv_metres
+    elif choice_1 == 'км' and choice_3 == 'м':
+        conv_metres = choice_2 * 1000
+        return conv_metres
+    elif choice_1 == choice_3:
+        conv_metres = choice_2
+        return conv_metres
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_metres, choice_3
+    else:
+        print('\nОдна из мер силы неверна.')
+        main_func()
+        pass
 
 
 # мл/л/мм3/см3/м3/дм3/км3
@@ -452,7 +516,7 @@ def conv_metres2():
     #         continue
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_metres, choice_3
+    return conv_metres
 
 
 def exit_conv_1():
