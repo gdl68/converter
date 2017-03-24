@@ -45,41 +45,119 @@ def conv_speed():
                   '===================================\n')
             continue
     if choice_1 == 'м\с':
-        if choice_2 == 'м\м':
-        elif choice_2 == 'м\ч':
-        elif choice_2 == 'км\с':
-        elif choice_2 == 'км\м':
-        elif choice_2 == 'км\ч':
+        if choice_3 == 'м\м':
+            conv_speed = choice_2 * 60
+            return conv_speed
+        elif choice_3 == 'м\ч':
+            conv_speed = choice_2 * 3600
+            return conv_speed
+        elif choice_3 == 'км\с':
+            conv_speed = choice_2 * 0.001
+            return conv_speed
+        elif choice_3 == 'км\м':
+            conv_speed = choice_2 * 0.06
+            return conv_speed
+        elif choice_3 == 'км\ч':
+            conv_speed = choice_2 * 3.6
+            return conv_speed
+        elif choice_3 == choice_1:
+            conv_speed = choice_2
+            return conv_speed
     elif choice_1 == 'м\м':
-        if choice_2 == 'м\с':
-        elif choice_2 == 'м\ч':
-        elif choice_2 == 'км\с':
-        elif choice_2 == 'км\м':
-        elif choice_2 == 'км\ч':
+        if choice_3 == 'м\с':
+            conv_speed = choice_2 * 0.01667
+            return conv_speed
+        elif choice_3 == 'м\ч':
+            conv_speed = choice_2 * 60
+            return conv_speed
+        elif choice_3 == 'км\с':
+            conv_speed = choice_2 * 0.00001667
+            return conv_speed
+        elif choice_3 == 'км\м':
+            conv_speed = choice_2 * 0.001
+            return conv_speed
+        elif choice_3 == 'км\ч':
+            conv_speed = choice_2 * 0.06
+            return conv_speed
+        elif choice_3 == choice_1:
+            conv_speed = choice_2
+            return conv_speed
     elif choice_1 == 'м\ч':
-        if choice_2 == 'м\с':
-        elif choice_2 == 'м\м':
-        elif choice_2 == 'км\с':
-        elif choice_2 == 'км\м':
-        elif choice_2 == 'км\ч':
+        if choice_3 == 'м\с':
+            conv_speed = choice_2 * 0.0002778
+            return conv_speed
+        elif choice_3 == 'м\м':
+            conv_speed = choice_2 * 0.01667
+            return conv_speed
+        elif choice_3 == 'км\с':
+            conv_speed = choice_2 * 0.0000002778
+            return conv_speed
+        elif choice_3 == 'км\м':
+            conv_speed = choice_2 * 0.00001667
+            return conv_speed
+        elif choice_3 == 'км\ч':
+            conv_speed = choice_2 * 0.001
+            return conv_speed
+        elif choice_1 == choice_3:
+            conv_speed = choice_2
+            return conv_speed
     elif choice_1 == 'км\с':
-        if choice_2 == 'м\с':
-        elif choice_2 == 'м\м':
-        elif choice_2 == 'м\ч':
-        elif choice_2 == 'км\м':
-        elif choice_2 == 'км\ч':
+        if choice_3 == 'м\с':
+            conv_speed = choice_2 * 1000
+            return conv_speed
+        elif choice_3 == 'м\м':
+            conv_speed = choice_2 * 60000
+            return conv_speed
+        elif choice_3 == 'м\ч':
+            conv_speed = choice_2 * 3600000
+            return conv_speed
+        elif choice_3 == 'км\м':
+            conv_speed = choice_2 * 60
+            return conv_speed
+        elif choice_3 == 'км\ч':
+            conv_speed = choice_2 * 3600
+            return conv_speed
+        elif choice_3 == choice_1:
+            conv_speed = choice_2
+            return conv_speed
     elif choice_1 == 'км\м':
-        if choice_2 == 'м\с':
-        elif choice_2 == 'м\м':
-        elif choice_2 == 'м\ч':
-        elif choice_2 == 'км\с':
-        elif choice_2 == 'км\ч':
+        if choice_3 == 'м\с':
+            conv_speed = choice_2 * 16.67
+            return conv_speed
+        elif choice_3 == 'м\м':
+            conv_speed = choice_2 * 1000
+            return conv_speed
+        elif choice_3 == 'м\ч':
+            conv_speed = choice_2 * 60000
+            return conv_speed
+        elif choice_3 == 'км\с':
+            conv_speed = choice_2 * 0.01667
+            return conv_speed
+        elif choice_3 == 'км\ч':
+            conv_speed = choice_2 * 60
+            return conv_speed
+        elif choice_1 == choice_3:
+            conv_speed = choice_2
+            return conv_speed
     elif choice_1 == 'км\ч':
-        if choice_2 == 'м\с':
-        elif choice_2 == 'м\м':
-        elif choice_2 == 'м\ч':
-        elif choice_2 == 'км\с':
-        elif choice_2 == 'км\м':
+        if choice_3 == 'м\с':
+            conv_speed = choice_2 * 0.2778
+            return conv_speed
+        elif choice_3 == 'м\м':
+            conv_speed = choice_2 * 16.67
+            return conv_speed
+        elif choice_3 == 'м\ч':
+            conv_speed = choice_2 * 1000
+            return conv_speed
+        elif choice_3 == 'км\с':
+            conv_speed = choice_2 * 0.0002778
+            return conv_speed
+        elif choice_3 == 'км\м':
+            conv_speed = choice_2 * 0.01667
+            return conv_speed
+        elif choice_1 == choice_3:
+            conv_speed = choice_2
+            return conv_speed
     else:
         print('Что то пошло не так...')
         main_func()
