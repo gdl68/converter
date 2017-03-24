@@ -647,39 +647,138 @@ def conv_volume():
 
 def conv_metres2():
     # Конвертация длины2
-    # while True:
-    #     choice_1 = input('\nИз какой единицы измерения '
-    #                      'массы мы\n будем конвертировать? мг/г/кг/ц/т\n')
-    #     if choice_1 == 'мг' or choice_1 == 'г' or choice_1 == 'кг' or choice_1 == 'ц' or choice_1 == 'т':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
-    # while True:
-    #     choice_2 = str(input('\nСколько?(целое число)\n'))
-    #     number = number_check(choice_2)
-    #     if number == False:
-    #         print('\n===================================\n'
-    #               '            Это не число!\n'
-    #               '===================================\n')
-    #         continue
-    #     else:
-    #         choice_2 = int(choice_2)
-    #         break
-    # while True:
-    #     choice_3 = input('\nВ какую единицы измерения массы мы\n '
-    #                      'будем конвертировать? мг/г/кг/ц/т/\n')
-    #     if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'площади мы\n будем конвертировать? мм2/см2/дм2/м2/га/км2\n')
+        if choice_1 == 'мм2' or choice_1 == 'см2' or choice_1 == 'дм2' or choice_1 == 'м2' or choice_1 == 'га'\
+                or choice_1 == 'км2':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?(целое число)\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения массы мы\n '
+                         'будем конвертировать? мм2/см2/дм2/м2/га/км2\n')
+        if choice_3 == 'мм2' or choice_3 == 'см2' or choice_3 == 'дм2' or choice_3 == 'м2' or choice_3 == 'га'\
+                or choice_3 == 'км2':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    if choice_1 == 'мм2' and choice_3 == 'см2':
+        conv_metres2 = choice_2 * 0.01
+        return conv_metres2
+    elif choice_1 == 'мм2' and choice_3 == 'дм2':
+        conv_metres2 = choice_2 * 0.0001
+        return conv_metres2
+    elif choice_1 == 'мм2' and choice_3 == 'м2':
+        conv_metres2 = choice_2 * 0.000001
+        return conv_metres2
+    elif choice_1 == 'мм2' and choice_3 == 'га':
+        conv_metres2 = choice_2 * 0.0000000001
+        return conv_metres2
+    elif choice_1 == 'мм2' and choice_3 == 'км2':
+        conv_metres2 = choice_2 * 0.000000000001
+        return conv_metres2
+    elif choice_1 == 'см2' and choice_3 == 'мм2':
+        conv_metres2 = choice_2 * 100
+        return conv_metres2
+    elif choice_1 == 'см2' and choice_3 == 'дм2':
+        conv_metres2 = choice_2 * 0.01
+        return conv_metres2
+    elif choice_1 == 'см2' and choice_3 == 'м2':
+        conv_metres2 = choice_2 * 0.0001
+        return conv_metres2
+    elif choice_1 == 'см2' and choice_3 == 'га':
+        conv_metres2 = choice_2 * 0.00000001
+        return conv_metres2
+    elif choice_1 == 'см2' and choice_3 == 'км2':
+        conv_metres2 = choice_2 * 0.0000000001
+        return conv_metres2
+    elif choice_1 == 'дм2' and choice_3 == 'мм2':
+        conv_metres2 = choice_2 * 10000
+        return conv_metres2
+    elif choice_1 == 'дм2' and choice_3 == 'см2':
+        conv_metres2 = choice_2 * 100
+        return conv_metres2
+    elif choice_1 == 'дм2' and choice_3 == 'м2':
+        conv_metres2 = choice_2 * 0.01
+        return conv_metres2
+    elif choice_1 == 'дм2' and choice_3 == 'га':
+        conv_metres2 = choice_2 * 0.000001
+        return conv_metres2
+    elif choice_1 == 'дм2' and choice_3 == 'км2':
+        conv_metres2 = choice_2 * 0.00000001
+        return conv_metres2
+    elif choice_1 == 'м2' and choice_3 == 'мм2':
+        conv_metres2 = choice_2 * 1000000
+        return conv_metres2
+    elif choice_1 == 'м2' and choice_3 == 'см2':
+        conv_metres2 = choice_2 * 10000
+        return conv_metres2
+    elif choice_1 == 'м2' and choice_3 == 'дм2':
+        conv_metres2 = choice_2 * 100
+        return conv_metres2
+    elif choice_1 == 'м2' and choice_3 == 'га':
+        conv_metres2 = choice_2 * 0.0001
+        return conv_metres2
+    elif choice_1 == 'м2' and choice_3 == 'км2':
+        conv_metres2 = choice_2 * 0.000001
+        return conv_metres2
+    elif choice_1 == 'га' and choice_3 == 'мм2':
+        conv_metres2 = choice_2 * 10000000000
+        return conv_metres2
+    elif choice_1 == 'га' and choice_3 == 'см2':
+        conv_metres2 = choice_2 * 100000000
+        return conv_metres2
+    elif choice_1 == 'га' and choice_3 == 'дм2':
+        conv_metres2 = choice_2 * 1000000
+        return conv_metres2
+    elif choice_1 == 'га' and choice_3 == 'м2':
+        conv_metres2 = choice_2 * 10000
+        return conv_metres2
+    elif choice_1 == 'га' and choice_3 == 'км2':
+        conv_metres2 = choice_2 * 0.01
+        return conv_metres2
+    elif choice_1 == 'км2' and choice_3 == 'мм2':
+        conv_metres2 = choice_2 * 1000000000000
+        return conv_metres2
+    elif choice_1 == 'км2' and choice_3 == 'см2':
+        conv_metres2 = choice_2 * 10000000000
+        return conv_metres2
+    elif choice_1 == 'км2' and choice_3 == 'дм2':
+        conv_metres2 = choice_2 * 100000000
+        return conv_metres2
+    elif choice_1 == 'км2' and choice_3 == 'м2':
+        conv_metres2 = choice_2 * 1000000
+        return conv_metres2
+    elif choice_1 == 'км2' and choice_3 == 'га':
+        conv_metres2 = choice_2 * 100
+        return conv_metres2
+    elif choice_1 == choice_3:
+        conv_metres2 = choice_2
+        return conv_metres2
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
+    else:
+        print('что то пошло не так...')
+        main_func()
+        pass
     return conv_metres
 
 
@@ -699,7 +798,7 @@ def exit_conv_1():
 
 def exit_conv():
     # Выход из конвертатора
-    conv_exit = input('\nХочешь выйти из конвертатора V1.3(alpha)? да/нет\n')
+    conv_exit = input('\nХочешь выйти из конвертатора V1.4? да/нет\n')
     if conv_exit == 'да':
         print('\nДо скорых встреч!')
         input('Нажмите Enter')
@@ -761,7 +860,7 @@ def main_func():
 
 
 print('\n===============================================\n'
-      'Добро пожаловать в конвертер единиц V1.3(alpha)\n'
+      'Добро пожаловать в конвертер единиц V1.4\n'
       '===============================================\n')
 main_func()
 exit_conv()
