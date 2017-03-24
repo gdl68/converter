@@ -268,7 +268,7 @@ def conv_mass():
             break
     while True:
         choice_3 = input('\nВ какую единицы измерения массы мы\n '
-                         'будем конвертировать? мг/г/кг/ц/т/\n')
+                         'будем конвертировать? мг/г/кг/ц/т\n')
         if choice_3 == 'мг' or choice_3 == 'г' or choice_3 == 'кг' or choice_3 == 'ц' or choice_3 == 'т':
             break
         else:
@@ -276,9 +276,72 @@ def conv_mass():
                   'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
+    if choice_1 == 'мг' and choice_3 == 'г':
+        conv_mass = choice_2 * 0.001
+        return conv_mass
+    elif choice_1 == 'мг' and choice_3 == 'кг':
+        conv_mass = choice_2 * 0.000001
+        return conv_mass
+    elif choice_1 == 'мг' and choice_3 == 'ц':
+        conv_mass = choice_2 * 0.00000001
+        return conv_mass
+    elif choice_1 == 'мг' and choice_3 == 'т':
+        conv_mass = choice_2 * 0.000000001
+        return conv_mass
+    elif choice_1 == 'г' and choice_3 == 'мг':
+        conv_mass = choice_2 * 1000
+        return conv_mass
+    elif choice_1 == 'г' and choice_3 == 'кг':
+        conv_mass = choice_2 * 0.001
+        return conv_mass
+    elif choice_1 == 'г' and choice_3 == 'ц':
+        conv_mass = choice_2 * 0.00001
+        return conv_mass
+    elif choice_1 == 'г' and choice_3 == 'т':
+        conv_mass = choice_2 * 0.000001
+        return conv_mass
+    elif choice_1 == 'кг' and choice_3 == 'мг':
+        conv_mass = choice_2 * 1000000
+        return conv_mass
+    elif choice_1 == 'кг' and choice_3 == 'г':
+        conv_mass = choice_2 * 1000
+        return conv_mass
+    elif choice_1 == 'кг' and choice_3 == 'ц':
+        conv_mass = choice_2 * 0.01
+        return conv_mass
+    elif choice_1 == 'кг' and choice_3 == 'т':
+        conv_mass = choice_2 * 0.001
+        return conv_mass
+    elif choice_1 == 'ц' and choice_3 == 'мг':
+        conv_mass = choice_2 * 100000000
+        return conv_mass
+    elif choice_1 == 'ц' and choice_3 == 'г':
+        conv_mass = choice_2 * 100000
+        return conv_mass
+    elif choice_1 == 'ц' and choice_3 == 'кг':
+        conv_mass = choice_2 * 100
+        return conv_mass
+    elif choice_1 == 'ц' and choice_3 == 'т':
+        conv_mass = choice_2 * 0.1
+        return conv_mass
+    elif choice_1 == 'т' and choice_3 == 'мг':
+        conv_mass = choice_2 * 1000000000
+        return conv_mass
+    elif choice_1 == 'т' and choice_3 == 'г':
+        conv_mass = choice_2 * 1000000
+        return conv_mass
+    elif choice_1 == 'т' and choice_3 == 'кг':
+        conv_mass = choice_2 * 1000
+        return conv_mass
+    elif choice_1 == 'т' and choice_3 == 'ц':
+        conv_mass = choice_2 * 10
+        return conv_mass
+    elif choice_1 == choice_3:
+        conv_mass = choice_2
+        return conv_mass
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass
+    pass
 
 
 def conv_pressure():
@@ -360,7 +423,7 @@ def conv_pressure():
         pass
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
-    return conv_mass
+    pass
 
 
 def conv_metres():
