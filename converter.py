@@ -1,3 +1,4 @@
+# coding=utf-8
 import sys
 
 
@@ -10,38 +11,79 @@ def number_check(a):
 
 
 def conv_speed():
-    # while True:
-    #     choice_1 = input('\nИз какой единицы измерения '
-    #                      'скорости мы\n будем конвертировать? мН/Н/кН/МН\n')
-    #     if choice_1 == 'мН' or choice_1 == 'Н' or choice_1 == 'кН' or choice_1 == 'МН':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
-    # while True:
-    #     choice_2 = str(input('\nСколько?\n'))
-    #     number = number_check(choice_2)
-    #     if number == False:
-    #         print('\n===================================\n'
-    #               '            Это не число!\n'
-    #               '===================================\n')
-    #         continue
-    #     else:
-    #         choice_2 = float(choice_2)
-    #         break
-    # while True:
-    #     choice_3 = input('\nВ какую единицы измерения скорости мы\n '
-    #                      'будем конвертировать? мН/Н/кН/МН\n')
-    #     if choice_3 == 'мН' or choice_3 == 'Н' or choice_3 == 'кН' or choice_3 == 'МН':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
-    return conv_speed
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'скорости мы\n будем конвертировать? "м\с"/"м\м"/"м\ч"/"км\с"/"км\м"/"км\ч"\n')
+        if choice_1 == 'м\с' or choice_1 == 'м\м' or choice_1 == 'м\ч' or choice_1 == 'км\с' or choice_1 == 'км\м'\
+            or choice_1 == 'км\ч':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицу измерения скорости мы\n '
+                         'будем конвертировать?\n')
+        if choice_3 == 'м\с' or choice_3 == 'м\м' or choice_3 == 'м\ч' or choice_3 == 'км\с' or choice_3 == 'км\м' \
+                or choice_3 == 'км\ч':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная еденица измерения!\n'
+                  '===================================\n')
+            continue
+    if choice_1 == 'м\с':
+        if choice_2 == 'м\м':
+        elif choice_2 == 'м\ч':
+        elif choice_2 == 'км\с':
+        elif choice_2 == 'км\м':
+        elif choice_2 == 'км\ч':
+    elif choice_1 == 'м\м':
+        if choice_2 == 'м\с':
+        elif choice_2 == 'м\ч':
+        elif choice_2 == 'км\с':
+        elif choice_2 == 'км\м':
+        elif choice_2 == 'км\ч':
+    elif choice_1 == 'м\ч':
+        if choice_2 == 'м\с':
+        elif choice_2 == 'м\м':
+        elif choice_2 == 'км\с':
+        elif choice_2 == 'км\м':
+        elif choice_2 == 'км\ч':
+    elif choice_1 == 'км\с':
+        if choice_2 == 'м\с':
+        elif choice_2 == 'м\м':
+        elif choice_2 == 'м\ч':
+        elif choice_2 == 'км\м':
+        elif choice_2 == 'км\ч':
+    elif choice_1 == 'км\м':
+        if choice_2 == 'м\с':
+        elif choice_2 == 'м\м':
+        elif choice_2 == 'м\ч':
+        elif choice_2 == 'км\с':
+        elif choice_2 == 'км\ч':
+    elif choice_1 == 'км\ч':
+        if choice_2 == 'м\с':
+        elif choice_2 == 'м\м':
+        elif choice_2 == 'м\ч':
+        elif choice_2 == 'км\с':
+        elif choice_2 == 'км\м':
+    else:
+        print('Что то пошло не так...')
+        main_func()
+        pass
 
 
 def conv_strength():
@@ -54,7 +96,7 @@ def conv_strength():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     while True:
@@ -75,7 +117,7 @@ def conv_strength():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     if choice_1 == 'мН' and choice_3 == 'Н':
@@ -132,7 +174,7 @@ def conv_mass():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     while True:
@@ -153,7 +195,7 @@ def conv_mass():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     # Дальше идут описания каждого случая
@@ -163,37 +205,81 @@ def conv_mass():
 
 def conv_pressure():
     # Конвертация давления
-    # while True:
-    #     choice_1 = input('\nИз какой единицы измерения '
-    #                      'давления мы\n будем конвертировать? мН/Н/кН/МН\n')
-    #     if choice_1 == 'мН' or choice_1 == 'Н' or choice_1 == 'кН' or choice_1 == 'МН':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
-    # while True:
-    #     number = number_check(choice_2)
-    #     if number == False:
-    #         print('\n===================================\n'
-    #               '            Это не число!\n'
-    #               '===================================\n')
-    #     choice_2 = str(input('\nСколько?\n'))
-    #         continue
-    #     else:
-    #         choice_2 = float(choice_2)
-    #         break
-    # while True:
-    #     choice_3 = input('\nВ какую единицы измерения давления мы\n '
-    #                      'будем конвертировать? мН/Н/кН/МН\n')
-    #     if choice_3 == 'мН' or choice_3 == 'Н' or choice_3 == 'кН' or choice_3 == 'МН':
-    #         break
-    #     else:
-    #         print('\n===================================\n'
-    #               'Введена неверная еденица измерения!\n'
-    #               '===================================\n')
-    #         continue
+    while True:
+        choice_1 = input('\nИз какой единицы измерения '
+                         'давления мы\n будем конвертировать? Па/МПа/гПа/кПа\n')
+        if choice_1 == 'Па' or choice_1 == 'МПа' or choice_1 == 'гПа' or choice_1 == 'кПа':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная единица измерения!\n'
+                  '===================================\n')
+            continue
+    while True:
+        choice_2 = str(input('\nСколько?\n'))
+        number = number_check(choice_2)
+        if number == False:
+            print('\n===================================\n'
+                  '            Это не число!\n'
+                  '===================================\n')
+
+            continue
+        else:
+            choice_2 = float(choice_2)
+            break
+    while True:
+        choice_3 = input('\nВ какую единицы измерения давления мы\n '
+                         'будем конвертировать? Па/МПа/гПа/кПа\n')
+        if choice_3 == 'Па' or choice_3 == 'МПа' or choice_3 == 'гПа' or choice_3 == 'кПа':
+            break
+        else:
+            print('\n===================================\n'
+                  'Введена неверная единица измерения!\n'
+                  '===================================\n')
+            continue
+    if choice_1 == 'Па' and choice_3 == 'МПа':
+        conv_pressure = choice_2 * 0.000001
+        return conv_pressure
+    elif choice_1 == 'Па' and choice_3 == 'гПа':
+        conv_pressure = choice_2 * 0.01
+        return conv_pressure
+    elif choice_1 == 'Па' and choice_3 == 'кПа':
+        conv_pressure = choice_2 * 0.001
+        return conv_pressure
+    elif choice_1 == 'МПа' and choice_3 == 'Па':
+        conv_pressure = choice_2 * 1000000
+        return conv_pressure
+    elif choice_1 == 'МПа' and choice_3 == 'гПа':
+        conv_pressure = choice_2 * 10000
+        return conv_pressure
+    elif choice_1 == 'МПа' and choice_3 == 'кПа':
+        conv_pressure = choice_2 * 1000
+        return conv_pressure
+    elif choice_1 == 'гПа' and choice_3 == 'Па':
+        conv_pressure = choice_2 * 100
+        return conv_pressure
+    elif choice_1 == 'гПа' and choice_3 == 'МПа':
+        conv_pressure = choice_2 * 0.0001
+        return conv_pressure
+    elif choice_1 == 'гПа' and choice_3 == 'кПа':
+        conv_pressure = choice_2 * 0.1
+        return conv_pressure
+    elif choice_1 == 'кПа' and choice_3 == 'Па':
+        conv_pressure = choice_2 * 1000
+        return conv_pressure
+    elif choice_1 == 'кПа' and choice_3 == 'МПа':
+        conv_pressure = choice_2 * 0.001
+        return conv_pressure
+    elif choice_1 == 'кПа' and choice_3 == 'гПа':
+        conv_pressure = choice_2 * 10
+        return conv_pressure
+    elif choice_1 == choice_3:
+        conv_pressure = choice_2
+        return conv_pressure
+    else:
+        print('Что то пошло не так...')
+        main_func()
+        pass
     # Дальше идут описания каждого случая
     # Не забудь про неправильный выбор
     return conv_mass
@@ -208,7 +294,7 @@ def conv_metres():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     while True:
@@ -225,11 +311,11 @@ def conv_metres():
     while True:
         choice_3 = input('\nВ какую единицы измерения '
                          'длины мы\n будем конвертировать? мм\см\дм\м\км\n')
-        if choice_3 == 'мм' or choice_3 == 'см' or choice_3 == 'дм' or choice_3 == 'км' or choice_3 =='м':
+        if choice_3 == 'мм' or choice_3 == 'см' or choice_3 == 'дм' or choice_3 == 'км' or choice_3 == 'м':
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     if choice_1 == 'мм' and choice_3 == 'см':
@@ -314,7 +400,7 @@ def conv_volume():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     while True:
@@ -336,7 +422,7 @@ def conv_volume():
             break
         else:
             print('\n===================================\n'
-                  'Введена неверная еденица измерения!\n'
+                  'Введена неверная единица измерения!\n'
                   '===================================\n')
             continue
     if choice_1 == 'мл' and choice_3 == 'л':
@@ -555,8 +641,8 @@ def exit_conv():
 def main_func():
     # Выбор типа конвертации
     conv_choice = input('\nЧто ты хочешь конвертировать?\n'
-                        ' длина/площадь/объем/давление/масса'
-                        '/сила/выход/скорость\n')
+                        ' длина/площадь!/объем/давление/масса'
+                        '/сила/скорость!/выход\n')
     if conv_choice == 'длина':
         print(conv_metres())
         exit_conv_1()
